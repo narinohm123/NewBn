@@ -105,8 +105,6 @@ class User(AbstractUser):
         ('ไม่ใช้','ไม่ใช้')
     )
     use_choice_con = models.CharField(max_length=9, blank=True, null=True, choices=use_choice)
-    def __str__(self):
-        return f'{self.faculty}' f' {self.degree}'
 
     degree_Master = models.CharField(max_length=100, null=True)
     faculty_Master = models.CharField(max_length=100, null=True)
@@ -122,8 +120,6 @@ class User(AbstractUser):
         ('ไม่ใช้','ไม่ใช้')
     )
     use_choice_con_Master = models.CharField(max_length=9, blank=True, null=True, choices=use_choice_Master)
-    def __str__(self):
-        return f'{self.faculty}' f' {self.degree_Master}'
 
     
     degree_doctorate = models.CharField(max_length=100, null=True)
@@ -141,7 +137,7 @@ class User(AbstractUser):
     )
     use_choice_con_doctorate = models.CharField(max_length=9, blank=True, null=True, choices=use_choice_doctorate)
     def __str__(self):
-        return f'{self.faculty}' f' {self.degree_doctorate}'
+        return f'{self.first_name}' f' {self.last_name}'
         
 
 class Document(models.Model):

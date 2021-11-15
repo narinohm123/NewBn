@@ -25,18 +25,18 @@ class Academic_Manpower(models.Model):
 
 class Service_Manpower(models.Model):
     year =  models.CharField(max_length=4, null=True)
-    position = models.CharField(max_length=255, blank=True, null=True)
-    bhd = models.IntegerField(blank=True,default='-', null=True)
-    master = models.IntegerField(blank=True,default='-', null=True)
-    sf = models.IntegerField(blank=True,default='-', null=True)
-    specific_sf = models.IntegerField(blank=True,default='-', null=True)
-    prof = models.IntegerField(blank=True,default='-', null=True)
-    specific_prof = models.IntegerField(blank=True,default='-', null=True)
-    work = models.IntegerField(blank=True,default='-', null=True)
-    leave = models.IntegerField(blank=True,default='-', null=True)
-    total = models.IntegerField(null=False)
+    s_position = models.CharField(max_length=255, blank=True, null=True)
+    s_bhd = models.IntegerField(blank=True,default='-', null=True)
+    s_master = models.IntegerField(blank=True,default='-', null=True)
+    s_sf = models.IntegerField(blank=True,default='-', null=True)
+    s_specific_sf = models.IntegerField(blank=True,default='-', null=True)
+    s_prof = models.IntegerField(blank=True,default='-', null=True)
+    s_specific_prof = models.IntegerField(blank=True,default='-', null=True)
+    s_work = models.IntegerField(blank=True,default='-', null=True)
+    s_leave = models.IntegerField(blank=True,default='-', null=True)
+    s_total = models.IntegerField(null=False)
     def __str__(self):
-        return f'{self.position}'f' {self.year}'
+        return f'{self.s_position}'f' {self.year}'
 
 class Event(models.Model):
     year =  models.CharField(max_length=4, null=True)
@@ -64,8 +64,8 @@ class Budget(models.Model):
 class Academice_Outstand(models.Model):
     year =  models.CharField(max_length=4, null=True)
     rank = models.CharField(max_length=1)
-    type_a = models.EmailField(max_length=255, null=True ,default='-')
-    name = models.EmailField(max_length=255, null=True,default='-')
+    type_a = models.CharField(max_length=255, null=True ,default='-')
+    name = models.CharField(max_length=255, null=True,default='-')
     type_choice = (
         ('บุคลากรสายวิชาการ','บุคลากรสายวิชาการ'),
         ('บุคลากรสายบริการ','บุคลากรสายบริการ')
